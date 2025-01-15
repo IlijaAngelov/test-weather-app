@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\UpdateWeatherAction;
 use App\Jobs\HourlyWeatherUpdateJob;
+use App\Jobs\UpdateWeatherJobWithActions;
 use Illuminate\Console\Command;
 
 class RunScheduleWorkForWeatherUpdate extends Command
@@ -26,6 +28,7 @@ class RunScheduleWorkForWeatherUpdate extends Command
      */
     public function handle()
     {
-        HourlyWeatherUpdateJob::dispatch();
+//        HourlyWeatherUpdateJob::dispatch();
+        UpdateWeatherJobWithActions::dispatch();
     }
 }
